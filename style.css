@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.card {
+    overflow: hidden;
+    /* Ensures the zoomed image doesn't overflow outside the card */
+    margin-bottom: 15px;
+    border-radius: 30px;
+    /* Adjust the spacing as needed */
+}
+
+.card .card-img-top {
+    transition: transform 0.4s ease, border-radius 0.4s ease;
+    /* Smooth transition */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1) rotate(3deg);
+    /* Zoom and rotate */
+    border-radius: 15px;
+    /* Add a slight curve */
+}
+
+
+
+/* Apply only to buttons within .card */
+.card .btn {
+    background: linear-gradient(to top, #007bff 50%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: 0 100%;
+    color: #fff; /* Set initial text color to white */
+    transition: color 0.3s ease, background-position 0.7s ease;
+    border: 1px solid #007bff;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover .btn {
+    background-position: 0 0;
+    color: #007bff; /* Change text color on hover */
+}
+
+
+/* Keyframe animation for the water filling effect */
+@keyframes waterFill {
+    to {
+        background-position: 0 0; /* Move gradient to fill from bottom to top */
+        color: #fff; /* Change text color after fill */
+    }
+}
+
+
+.card-img-top {
+    border-radius: 30px 0 0 30px;
+    /* Add rounded corners to the top left and right */
+}
+
+/* Make the container scrollable */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    /* Horizontal scroll */
+    white-space: nowrap;
+    /* Prevent wrapping */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+.scroll-container img {
+    width: 150px;
+    height: auto;
+    transition: filter 0.3s ease;
+    /* Smooth transition */
+    filter: grayscale(100%);
+    /* Grayscale effect by default */
+}
+
+.scroll-container img:hover {
+    filter: grayscale(0%);
+    /* Remove grayscale on hover */
+}
+
+
+
+
+
+/* .topround {
+    background-color: rgba(156, 175, 61, 0.422);
+    max-width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+.bottomround {
+    background-color: rgba(127, 255, 212, 0.533);
+    max-width: 250px;
+    height: 250px;
+    border-radius: 150px;
+} */
+
+/* Tablets (width between 768px and 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        /* Adjust as needed for tablets */
+    }
+
+    .card {
+        margin-bottom: 15px;
+        /* Adjust the spacing as needed */
+    }
+
+    /* .topround {
+        background-color: rgba(156, 175, 61, 0.422);
+        max-width: 100px;
+        height: 100px;
+        border-radius: 150px;
+    }
+    
+    .bottomround {
+        background-color: rgba(127, 255, 212, 0.533);
+        max-width: 150px;
+        height: 150px;
+        border-radius: 50px;
+    } */
+
+}
+
+/* Mobile phones (width 767px and below) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 95%;
+        /* Adjust as needed for mobile */
+    }
+
+    .card {
+        margin-bottom: 15px;
+        /* Adjust the spacing as needed */
+    }
+
+    /* .topround {
+        display: none;
+        background-color: rgba(156, 175, 61, 0.422);
+        max-width: 70px;
+        height: 70px;
+        border-radius: 30px;
+    }
+    
+    .bottomround {
+        display: none;
+        background-color: rgba(127, 255, 212, 0.533);
+        max-width: 80px;
+        height:80px;
+        border-radius: 40px;
+    } */
+    .topround,
+    .bottomround {
+        margin-top: 0 !important;
+        /* Reset negative margins on mobile */
+        margin-bottom: 0 !important;
+    }
+
+    .col-md-6 img {
+        max-height: 100%;
+        /* Adjust the image size if needed for smaller screens */
+        width: 100%;
+        /* Make the image full width */
+    }
+
+    .header-text {
+        order: 2;
+    }
+
+    .header-img {
+        order: 1;
+    }
+}
